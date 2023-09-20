@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://obc3sa3r2qsq"]
+
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_841d0"]
+[ext_resource type="Texture2D" uid="uid://c57xxr44ogup4" path="res://godot.png" id="2_nvo4f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdbth"]
+size = Vector3(1.23495, 1.16069, 0.576834)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_841d0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00850669, 0.070653, 0.0473292)
+shape = SubResource("BoxShape3D_rdbth")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.145624, 0, 0, 0, 0.186079, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("2_nvo4f")

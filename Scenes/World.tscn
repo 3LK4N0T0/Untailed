@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3hdbuby67aw3"]
+
+[ext_resource type="PackedScene" uid="uid://obc3sa3r2qsq" path="res://Scenes/Player.tscn" id="1_e2us1"]
+[ext_resource type="Texture2D" uid="uid://kdv5boa0fnl3" path="res://icon.svg" id="2_v5sp3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d3g2o"]
+
+[node name="World" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_e2us1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00193501, 1.27096, 0.00891113)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(4.01239, 0, 0, 0, 0.229784, 0, 0, 0, 5.31847, 0.0733165, -0.411012, 0.117107)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_d3g2o")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(0.770607, 0, 0, 0, 0.0375611, 0.992643, 0, -0.792076, 0.0470723, 0, 0, 0)
+texture = ExtResource("2_v5sp3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.835759, 0.549096, 0, -0.549096, 0.83576, -1.47625, 5.06362, 9.27013)

@@ -11,6 +11,5 @@ config_version=5
 [application]
 
 config/name="Untailed"
-run/main_scene="res://Mundo/Mundo1.tscn"
+run/main_scene="res://Scenes/World.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
