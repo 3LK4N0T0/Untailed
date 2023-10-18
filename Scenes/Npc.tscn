@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6mpeirxobmev"]
+
+[ext_resource type="Texture2D" uid="uid://bptnv8trp80po" path="res://Assets/PlaceHolders/placeholder.png" id="1_a3eto"]
+[ext_resource type="Script" path="res://Scripts/Npc.gd" id="1_s4trw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtymd"]
+size = Vector3(1, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8eoe0"]
+size = Vector3(1.19119, 1, 1)
+
+[node name="Npc" type="StaticBody3D"]
+script = ExtResource("1_s4trw")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.173733, 0, 0, 0, 0.201946, 0, 0, 0, 1, -0.15, 0, 0)
+modulate = Color(0.768627, 0, 0, 1)
+texture = ExtResource("1_a3eto")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vtymd")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_8eoe0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

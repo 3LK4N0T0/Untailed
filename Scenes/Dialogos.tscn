@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfg0iemlvrqho"]
+
+[ext_resource type="Texture2D" uid="uid://bptnv8trp80po" path="res://Assets/PlaceHolders/placeholder.png" id="1_gpq1k"]
+[ext_resource type="Script" path="res://Scripts/Dialogos.gd" id="1_kcrsa"]
+
+[node name="Dialogos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kcrsa")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -182.0
+offset_right = -10.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 83.0
+grow_vertical = 2
+scale = Vector2(0.959999, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_gpq1k")
+expand_mode = 4
+
+[node name="Name" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Npc"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Lorem Ipsum"
+justification_flags = 227

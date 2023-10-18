@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqa2gm5edp2me"]
+
+[ext_resource type="Script" path="res://Scripts/Global.gd" id="1_43nhw"]
+[ext_resource type="PackedScene" uid="uid://b3hdbuby67aw3" path="res://Scenes/World.tscn" id="1_hrf00"]
+[ext_resource type="PackedScene" uid="uid://bfg0iemlvrqho" path="res://Scenes/Dialogos.tscn" id="2_23t23"]
+
+[node name="Node" type="Node"]
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource("1_43nhw")
+
+[node name="Dialogos" parent="." instance=ExtResource("2_23t23")]
+
+[node name="World" parent="." instance=ExtResource("1_hrf00")]
