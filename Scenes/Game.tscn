@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqa2gm5edp2me"]
+[gd_scene load_steps=7 format=3 uid="uid://bqa2gm5edp2me"]
 
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="1_43nhw"]
 [ext_resource type="PackedScene" uid="uid://b3hdbuby67aw3" path="res://Scenes/World.tscn" id="1_hrf00"]
 [ext_resource type="PackedScene" uid="uid://bfg0iemlvrqho" path="res://Scenes/Dialogos.tscn" id="2_23t23"]
+[ext_resource type="Script" path="res://Scripts/Interfaz.gd" id="3_g5w44"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtymd"]
+size = Vector3(1, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8eoe0"]
+size = Vector3(1.19119, 1, 1)
 
 [node name="Node" type="Node"]
 
@@ -10,5 +17,28 @@
 script = ExtResource("1_43nhw")
 
 [node name="Dialogos" parent="." instance=ExtResource("2_23t23")]
+script = ExtResource("3_g5w44")
+
+[node name="Button" type="Button" parent="Dialogos/Panel" index="1"]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 131.0
+offset_right = 1115.0
+offset_bottom = 139.0
+scale = Vector2(-15.085, -13.6535)
 
 [node name="World" parent="." instance=ExtResource("1_hrf00")]
+
+[node name="CollisionShape3D" parent="World/Npc" index="1"]
+shape = SubResource("BoxShape3D_vtymd")
+
+[node name="CollisionShape3D" parent="World/Npc/Activator" index="0"]
+shape = SubResource("BoxShape3D_8eoe0")
+
+[connection signal="pressed" from="Dialogos/Panel/Button" to="Dialogos" method="_on_button_pressed"]
+[connection signal="body_entered" from="World/Npc/Activator" to="Dialogos" method="_on_activator_body_entered"]
+
+[editable path="Dialogos"]
+[editable path="World"]
+[editable path="World/Floor"]
+[editable path="World/Npc"]

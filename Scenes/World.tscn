@@ -15,7 +15,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243474, 0, -0.929286)
 
 [node name="Npc" parent="." instance=ExtResource("3_ap0n7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, 0.523398, 7.85551)
-script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.486625, 0, -0.873611, 0, 1.06496, 0, 0.873611, 0, 0.486625, 0, 0, 0)
